@@ -8,8 +8,9 @@ from langchain.chains import RetrievalQA
 from langchain.embeddings import HuggingFaceEmbeddings
 from fastapi.middleware.cors import CORSMiddleware
 
-
 app = FastAPI()
+
+
 name = FAISS.load_local(embeddings=HuggingFaceEmbeddings(),folder_path='')
 app.add_middleware(
     CORSMiddleware,
