@@ -31,6 +31,6 @@ async def chat_endpoint(message: Message):
     return {"reply": reply}
 
 def process_message(user_message: str) -> str:
-    qa = RetrievalQA.from_chain_type(llm=OpenAI(model='text-davinci-003',openai_api_key="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"), chain_type='stuff', retriever=name.as_retriever())
+    qa = RetrievalQA.from_chain_type(llm=OpenAI(model='text-davinci-003',openai_api_key=""), chain_type='stuff', retriever=name.as_retriever())
     ans = qa.run(user_message)
     return f"Bot {ans}"
